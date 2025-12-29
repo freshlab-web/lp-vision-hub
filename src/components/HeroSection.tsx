@@ -89,8 +89,8 @@ const HeroSection = () => {
                 <div className="text-sm text-white/60">Ativos inspecionados</div>
               </div>
               <div>
-                <div className="text-3xl lg:text-4xl font-bold text-white">27</div>
-                <div className="text-sm text-white/60">Estados atendidos</div>
+                <div className="text-3xl lg:text-4xl font-bold text-white">+10</div>
+                <div className="text-sm text-white/60">Países atendidos</div>
               </div>
             </div>
           </div>
