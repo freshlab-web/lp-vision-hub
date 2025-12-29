@@ -57,9 +57,9 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-6 lg:space-y-8">
             <div className="space-y-4 animate-fade-up">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary-foreground">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
                 Sistemas automatizados para{" "}
-                <span className="text-primary">inspeção de ativos</span>
+                <span className="text-white">inspeção de ativos</span>
               </h1>
               <p className="text-lg lg:text-xl text-primary-foreground/80 max-w-xl">
                 Monitoramento remoto com uso de drones, IA e softwares personalizados.
@@ -71,7 +71,7 @@ const HeroSection = () => {
               {pills.map((pill, index) => (
                 <span 
                   key={index}
-                  className="px-4 py-2 rounded-full bg-primary/20 text-primary border border-primary/30 text-sm font-medium backdrop-blur-sm"
+                  className="px-4 py-2 rounded-full bg-white/20 text-white border border-white/30 text-sm font-medium backdrop-blur-sm"
                 >
                   {pill}
                 </span>
@@ -81,16 +81,16 @@ const HeroSection = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
               <div>
-                <div className="text-3xl lg:text-4xl font-bold text-primary">10+</div>
-                <div className="text-sm text-primary-foreground/60">Anos de experiência</div>
+                <div className="text-3xl lg:text-4xl font-bold text-white">10+</div>
+                <div className="text-sm text-white/60">Anos de experiência</div>
               </div>
               <div>
-                <div className="text-3xl lg:text-4xl font-bold text-primary">500K+</div>
-                <div className="text-sm text-primary-foreground/60">Ativos inspecionados</div>
+                <div className="text-3xl lg:text-4xl font-bold text-white">500K+</div>
+                <div className="text-sm text-white/60">Ativos inspecionados</div>
               </div>
               <div>
-                <div className="text-3xl lg:text-4xl font-bold text-primary">27</div>
-                <div className="text-sm text-primary-foreground/60">Estados atendidos</div>
+                <div className="text-3xl lg:text-4xl font-bold text-white">27</div>
+                <div className="text-sm text-white/60">Estados atendidos</div>
               </div>
             </div>
           </div>
