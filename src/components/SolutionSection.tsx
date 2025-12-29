@@ -65,7 +65,7 @@ const SolutionSection = () => {
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             Uma arquitetura contínua que conecta{" "}
-            <span className="text-gradient">captura, automação e inteligência</span>
+            <span className="text-white">captura, automação e inteligência</span>
           </h2>
           <p className="text-lg text-secondary-foreground/70">
             Plataforma integrada para inspeções automatizadas de ponta a ponta
