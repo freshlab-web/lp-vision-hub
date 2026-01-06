@@ -1,10 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useState } from "react";
-import { Loader2, Check } from "lucide-react";
-import { toast } from "@/hooks/use-toast";
 import heroDrone from "@/assets/hero-drone.jpg";
+import { useEffect } from "react";
 
 const pills = [
   "Operação remota",
@@ -14,30 +9,26 @@ const pills = [
 ];
 
 const HeroSection = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: ''
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast({
-      title: "Solicitação enviada!",
-      description: "Nossa equipe entrará em contato em breve.",
-    });
-    
-    setFormData({ name: '', email: '', company: '', phone: '' });
-    setIsSubmitting(false);
-  };
-
+  useEffect(() => {
+    const formId = "formulario-sistemas-automatizados-para-inspecao-de-ativos-ed9b46dbf9ff1f2566a6";
+    const src = "https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js";
+    const existing = document.querySelector(`script[src="${src}"]`) as HTMLScriptElement | null;
+    const init = () => {
+      if ((window as any).RDStationForms && document.getElementById(formId)) {
+        new (window as any).RDStationForms(formId, "UA-61384495-1").createForm();
+      }
+    };
+    if (existing) {
+      if ((window as any).RDStationForms) init();
+      else existing.addEventListener("load", init, { once: true });
+    } else {
+      const script = document.createElement("script");
+      script.src = src;
+      script.async = true;
+      script.onload = init;
+      document.body.appendChild(script);
+    }
+  }, []);
   return (
     <section className="relative min-h-screen pt-20 lg:pt-24 overflow-hidden">
       {/* Background image */}
@@ -98,93 +89,10 @@ const HeroSection = () => {
           {/* Right Form */}
           <div 
             id="lead-form"
-            className="glass rounded-3xl p-6 lg:p-8 shadow-2xl animate-scale-in"
+            className="rounded-3xl p-6 lg:p-8 shadow-2xl animate-scale-in overflow-hidden bg-[#c5c7cd]"
             style={{ animationDelay: '0.3s' }}
           >
-            <div className="text-center mb-6">
-              <h2 className="text-xl lg:text-2xl font-bold text-foreground">
-                Agende uma reunião técnica
-              </h2>
-              <p className="text-muted-foreground mt-2">
-                Descubra como automatizar suas inspeções
-              </p>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name" className="text-foreground">Nome</Label>
-                <Input
-                  id="name"
-                  placeholder="Seu nome completo"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                  className="h-12 rounded-xl bg-background/50 border-border/50 focus:border-primary"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-foreground">E-mail Corporativo</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="seu@empresa.com.br"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  className="h-12 rounded-xl bg-background/50 border-border/50 focus:border-primary"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="company" className="text-foreground">Empresa</Label>
-                <Input
-                  id="company"
-                  placeholder="Nome da empresa"
-                  value={formData.company}
-                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  required
-                  className="h-12 rounded-xl bg-background/50 border-border/50 focus:border-primary"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="phone" className="text-foreground">Telefone</Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  placeholder="(00) 00000-0000"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  required
-                  className="h-12 rounded-xl bg-background/50 border-border/50 focus:border-primary"
-                />
-              </div>
-
-              <Button 
-                type="submit" 
-                variant="hero" 
-                size="xl" 
-                className="w-full mt-6"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    Enviando...
-                  </>
-                ) : (
-                  <>
-                    <Check className="w-5 h-5" />
-                    Agendar reunião técnica
-                  </>
-                )}
-              </Button>
-            </form>
-
-            <p className="text-xs text-muted-foreground text-center mt-4">
-              Seus dados estão seguros. Não compartilhamos com terceiros.
-            </p>
+            <div role="main" id="formulario-sistemas-automatizados-para-inspecao-de-ativos-ed9b46dbf9ff1f2566a6" />
           </div>
         </div>
       </div>

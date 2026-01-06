@@ -15,4 +15,20 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    cssCodeSplit: false,
+    rollupOptions: {
+      output: {
+        entryFileNames: () => "index-2.js",
+        chunkFileNames: "assets/[name]-[hash].js",
+        assetFileNames: assetInfo => {
+          const name = assetInfo.name || "";
+          if (/\.css$/i.test(name)) {
+            return "index-2.css";
+          }
+          return "assets/[name]-[hash][extname]";
+        },
+      },
+    },
+  },
 }));
