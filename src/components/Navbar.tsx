@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
-import horusLogo from "@/assets/horus-logo.svg";
-import djiLogo from "@/assets/dji-authorized.png";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+const CDN = "https://cdn.jsdelivr.net/gh/freshlab-web/lp-vision-hub@main/dist/assets/";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,13 +18,13 @@ const Navbar = () => {
           {/* Logos */}
           <div className="flex items-center gap-4 lg:gap-6">
             <img 
-              src={horusLogo} 
+              src={`${CDN}horus-logo-CCzXAl_0.svg`} 
               alt="Horus Smart Detections" 
               className="h-6 lg:h-8 w-auto"
             />
             <div className="hidden sm:block h-6 w-px bg-border" />
             <img 
-              src={djiLogo} 
+              src={`${CDN}dji-authorized-BIXBGEAD.png`} 
               alt="DJI Authorized Reseller" 
               className="hidden sm:block h-4 lg:h-5 w-auto opacity-70"
             />

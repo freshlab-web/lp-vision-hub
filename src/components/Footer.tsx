@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import horusLogo from "@/assets/horus-logo.svg";
 import { ArrowRight } from "lucide-react";
+const CDN = "https://cdn.jsdelivr.net/gh/freshlab-web/lp-vision-hub@main/dist/";
 
 const Footer = () => {
   const scrollToForm = () => {
@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <img 
-              src={horusLogo} 
+              src={`${CDN}assets/horus-logo-CCzXAl_0.svg`} 
               alt="Horus Smart Detections" 
               className="h-6 brightness-0 invert opacity-80"
             />

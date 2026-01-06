@@ -1,4 +1,4 @@
-import heroDrone from "@/assets/hero-drone.jpg";
+const CDN = "https://cdn.jsdelivr.net/gh/freshlab-web/lp-vision-hub@main/dist/assets/";
 import { useEffect } from "react";
 
 const pills = [
@@ -34,7 +34,7 @@ const HeroSection = () => {
       {/* Background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroDrone})` }}
+        style={{ backgroundImage: `url(${CDN}hero-drone-D_4l8_0I.jpg)` }}
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-horus-navy/95 via-horus-navy/85 to-horus-navy/70" />
